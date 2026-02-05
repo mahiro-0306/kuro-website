@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "*.csproj",
+      "use": "@vercel/dotnet"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "bin/Release/net8.0/publish/wwwroot/$1"
+    }
+  ]
+}
