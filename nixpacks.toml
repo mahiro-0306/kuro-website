@@ -1,4 +1,8 @@
-[phases]
-setup = "apt-get update && apt-get install -y dotnet-sdk-8.0"
-build = "dotnet publish -c Release -o bin/Release/net8.0/publish"
-start = "dotnet bin/Release/net8.0/publish/用户登录系统.dll"
+[phases.setup]
+cmds = ["apt-get update", "apt-get install -y dotnet-sdk-8.0"]
+
+[phases.build]
+cmds = ["dotnet publish -c Release -o bin/Release/net8.0/publish"]
+
+[phases.start]
+cmd = "dotnet bin/Release/net8.0/publish/用户登录系统.dll"
